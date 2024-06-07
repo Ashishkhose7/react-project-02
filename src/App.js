@@ -11,8 +11,12 @@ function App() {
         </p>
         <div>
         <p>This is para added from github</p>
+        <ul>
+          <li>List1</li>
+          <li>List2</li>
+          <li>List3</li>
+        </ul>
         </div>
-        <center>This is center</center>
       </header>
     </div>
   );
