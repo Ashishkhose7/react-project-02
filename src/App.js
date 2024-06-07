@@ -11,6 +11,7 @@ function App() {
         </p>
         <div>
         </div>
+        <center>This is center</center>
       </header>
     </div>
   );
