@@ -21,11 +21,7 @@ function App() {
           <li>List2</li>
           <li>List3</li>
         </ul>
-            <ul>
-          <li>List1</li>
-          <li>List2</li>
-          <li>List3</li>
-        </ul>
+          
         </div>
       </header>
     </div>
