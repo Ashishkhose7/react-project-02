@@ -9,6 +9,8 @@ function App() {
         <p>
           This is React Project
         </p>
+        <div>
+        </div>
       </header>
     </div>
   );
