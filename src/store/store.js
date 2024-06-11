@@ -1,8 +1,8 @@
 import { configureStore } from "@reduxjs/toolkit";
-//import reducers here
+import globalstatReducers from "../Reducers/globalstatReducers";
 
 export const store = configureStore({
     reducer : {
-        //define reducers here
+        globalstatReducers
     }
 })

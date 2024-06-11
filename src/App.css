@@ -6,6 +6,7 @@
 
 .navigation{
   background-color: whitesmoke;
+  height: 100vh;
 }
 .menus a{
   text-decoration: none;
@@ -17,4 +18,41 @@ a.active {
   color: #333;
   outline: none;
   text-decoration: none;
+}
+.menu-btn{
+  /* border: 1px solid blueviolet; */
+  background-color: lavender;
+  height: 40px;
+  width: 40px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+.menu-btn:hover{
+  /* background-color: blueviolet; */
+  color: #333;
+}
+.manu-tab{
+  background-color: blueviolet;
+  color: #fff;
+  height: 40px;
+  width: 40px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+.dash-heading{
+  font-weight: normal;
+}
+.card{
+  border: 0;
+  border: 1px solid lightgray;
+  height: 180px;
+  width: 200px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }

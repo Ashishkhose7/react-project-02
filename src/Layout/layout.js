@@ -1,14 +1,21 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, useNavigate } from "react-router-dom";
 import Navigation from "../Components/Navigation";
 import '../App.css';
+import { useEffect } from "react";
 const LayoutComponent = () => {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    navigate("dashboard")
+  }, [])
+  
     return (
       <div className="container-fluid">
           <div className="row">
-            <div className="navigation col-md-3 border border-success">
+            <div className="navigation col-md-2">
               <Navigation/>
             </div>
-            <div className="content col-md-9 border border-success">
+            <div className="content col-md-10 border border-success">
               <Outlet/>
             </div>
           </div>

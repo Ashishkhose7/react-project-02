@@ -2,8 +2,10 @@ import { createBrowserRouter } from "react-router-dom";
 
 import LayoutComponent from "../Layout/layout";
 // import Home from '../Pages/Home'
-import About from '../Pages/About';
 import Dashboard from "../Components/Dashboard";
+import Cryptocurrency from "../Pages/Cryptocurrency";
+import Exchanges from "../Pages/Exchanges";
+import News from "../Pages/News";
 
 const router = createBrowserRouter([
     {
@@ -11,12 +13,20 @@ const router = createBrowserRouter([
       element: <LayoutComponent  />,
       children: [
         {
-          index: true,
+          path: "dashboard",
           element: <Dashboard />,
         },
         {
-          path: 'about',
-          element: <About />,
+          path: "cryptocurrencies",
+          element: <Cryptocurrency />,
+        },
+        {
+          path: "exchanges",
+          element: <Exchanges />,
+        },
+        {
+          path: "news",
+          element: <News />,
         },
         {
           path: '*',
