@@ -21,9 +21,9 @@ const Navigation = (props) => {
   return (
     <div className="navigation-sec">
          <div className="row">
-          <div className="col-12 brand py-3 text-center">
-            <img src="https://seeklogo.com/images/E/ethereum-logo-EC6CDBA45B-seeklogo.com.png" alt="" className="img-fluid" height={35} width={35}/>
-             &nbsp; <span>CRYPTo</span>
+          <div className="col-12 brand py-3 text-center d-flex align-item-center justify-content-center">
+            <img src="https://www.svgrepo.com/show/331318/bittrex.svg" alt="" className="img-fluid" height={35} width={35}/>
+             &nbsp; <span className="h4 m-0 p-0 d-flex align-items-center">CRYPT <span className="text-warning">o</span></span>
           </div>
           <div className="col-11 p-0 m-auto menus mt-3 py-3 text-center">
             <div className="row d-flex justify-content-center mx-1">

@@ -10,11 +10,11 @@ export const globalstatSlice = createSlice({
     reducers:{
         loadstats:(state, action)=>{
             state.globaldata = action.payload;
-            console.log(action.payload);
+            // console.log(action.payload);
         },
         loadcoins:(state, action)=>{
-            state.coins = action.payload;
-            console.log(action.payload);
+            state.coins = action.payload.slice(0, 10);
+            // console.log(action.payload.slice(0, 10));
         }
     }
 })

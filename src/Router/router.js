@@ -6,6 +6,7 @@ import Dashboard from "../Components/Dashboard";
 import Cryptocurrency from "../Pages/Cryptocurrency";
 import Exchanges from "../Pages/Exchanges";
 import News from "../Pages/News";
+import Cryptodetails from "../Pages/Cryptodetails";
 
 const router = createBrowserRouter([
     {
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
         {
           path: "news",
           element: <News />,
+        },
+        {
+          path: '/crypto/:coinId',
+          element: <Cryptodetails/>
         },
         {
           path: '*',
