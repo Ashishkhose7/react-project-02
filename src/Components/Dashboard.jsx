@@ -16,7 +16,6 @@ const Dashboard = () => {
   // const [newsCategory, setNewsCategory] = useState('Cryptocurrency');
   const [count, setCount] = useState(8)
   const dispatch = useDispatch();
-  console.log(topnews);
   useEffect(() => {
       const fetchStats = async()=>{
         // const statsurl = 'https://coinranking1.p.rapidapi.com/stats?referenceCurrencyUuid=yhjMzLPhuIDl';

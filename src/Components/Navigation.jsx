@@ -16,6 +16,7 @@ const Navigation = (props) => {
       }else if(path == '/news'){
         setTab(path);
       }
+      window.scrollTo(0,0);
   }, [location.pathname])
 
   return (

@@ -16,7 +16,7 @@ const coins = [
       price:"9370.9993109108",
       btcPrice:"1",
       listedAt:1483228800,
-      change:"-0.52",
+      change:"0.52",
       rank:1,
       coinrankingUrl:"https://coinranking.com/coin/Qwsogvtv82FCd+bitcoin-btc",
 
@@ -46,7 +46,7 @@ const coins = [
       price:"9370.9993109108",
       btcPrice:"1",
       listedAt:1483228800,
-      change:"-0.52",
+      change:"5.2",
       rank:1,
       coinrankingUrl:"https://coinranking.com/coin/Qwsogvtv82FCd+bitcoin-btc",
 
@@ -61,7 +61,7 @@ const coins = [
       price:"9370.9993109108",
       btcPrice:"1",
       listedAt:1483228800,
-      change:"-0.52",
+      change:"-0.2",
       rank:1,
       coinrankingUrl:"https://coinranking.com/coin/Qwsogvtv82FCd+bitcoin-btc",
 
@@ -76,7 +76,7 @@ const coins = [
       price:"9370.9993109108",
       btcPrice:"1",
       listedAt:1483228800,
-      change:"-0.52",
+      change:"2",
       rank:1,
       coinrankingUrl:"https://coinranking.com/coin/Qwsogvtv82FCd+bitcoin-btc",
 
