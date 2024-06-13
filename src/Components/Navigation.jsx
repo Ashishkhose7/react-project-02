@@ -25,7 +25,7 @@ const Navigation = (props) => {
             <img src="https://www.svgrepo.com/show/331318/bittrex.svg" alt="" className="img-fluid" height={35} width={35}/>
              &nbsp; <span className="h4 m-0 p-0 d-flex align-items-center">CRYPT <span className="text-warning">o</span></span>
           </div>
-          <div className="col-11 p-0 m-auto menus mt-3 py-3 text-center">
+          <div className="col-11 col-xxl-8 p-0 m-auto menus mt-3 py-3 text-center">
             <div className="row d-flex justify-content-center mx-1">
                 <div className="col-5 m-0 p-0 mb-4 text-center">
                   <NavLink to="/dashboard" className={({ isActive }) => (isActive ? 'active' : '')}> 

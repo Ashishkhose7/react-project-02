@@ -1,9 +1,12 @@
 import React from "react"
-import { Avatar, Card } from 'antd';
+import { Avatar, Card, Typography } from 'antd';
 // import moment from 'moment';
 import millify from 'millify';
+import moment from 'moment';
+const { Text, Title } = Typography;
 
-const Cardcomponent = ({coin, getcoin, getnews}) => {
+
+const Cardcomponent = ({coin, news, getcoin, getnews}) => {
   if(getcoin){
     const change = Math.sign(Number(coin.change));
     // console.log(coin);
@@ -24,22 +27,21 @@ const Cardcomponent = ({coin, getcoin, getnews}) => {
   }else if(getnews){
     return(
       <>
-       {/* <Card hoverable className="news-card">
-            <a href={news.url} target="_blank" rel="noreferrer">
+       <Card hoverable className="news-card">
+            <a href={news.article_url} target="_blank" rel="noreferrer">
               <div className="news-image-container">
-                <Title className="news-title" level={4}>{news.name}</Title>
-                <img src={news?.image?.thumbnail?.contentUrl || demoImage} alt="" />
+                <Title className="news-title" level={4}><span className="news-title">{news.article_title.length >60 ? `${news.article_title.substring(0,60)}...` : news.article_title}</span></Title>
+                <img className="img-fluid" src={news.article_photo_url} alt="img" height={240} width={100}/>
               </div>
-              <p>{news.description.length > 100 ? `${news.description.substring(0, 100)}...` : news.description}</p>
+              <p className="">{news.article_title.length > 80 ? `${news.article_title.substring(0, 80)}...` : news.article_title}</p>
               <div className="provider-container">
                 <div>
-                  <Avatar src={news.provider[0]?.image?.thumbnail?.contentUrl || demoImage} alt="" />
-                  <Text className="provider-name">{news.provider[0]?.name}</Text>
+                  <Text className="provider-name text-danger">{news.source}</Text>
                 </div>
-                <Text>{moment(news.datePublished).startOf('ss').fromNow()}</Text>
+                <Text>{moment(news.post_time_utc).startOf('ss').fromNow()}</Text>
               </div>
             </a>
-          </Card> */}
+          </Card>
       </>
     )
   }
