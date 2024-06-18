@@ -6,7 +6,7 @@ import moment from 'moment';
 const { Text, Title } = Typography;
 
 
-const Cardcomponent = ({coin, news, getcoin, getnews}) => {
+const Cardcomponent = ({coin, news, getcoin, getnews, source}) => {
   if(getcoin){
     const change = Math.sign(Number(coin.change));
     // console.log(coin);
@@ -28,17 +28,17 @@ const Cardcomponent = ({coin, news, getcoin, getnews}) => {
     return(
       <>
        <Card hoverable className="news-card">
-            <a href={news.article_url} target="_blank" rel="noreferrer">
+            <a href={news.url} target="_blank" rel="noreferrer">
               <div className="news-image-container">
-                <Title className="news-title" level={4}><span className="news-title">{news.article_title.length >60 ? `${news.article_title.substring(0,60)}...` : news.article_title}</span></Title>
-                <img className="img-fluid" src={news.article_photo_url} alt="img" height={240} width={100}/>
+                <Title className="news-title" level={4}><span className="news-title">{news.title.length >50 ? `${news.title.substring(0,50)}...` : news.title}</span></Title>
+                <img className="img-fluid" src="https://source.unsplash.com/1600x800/random/?Cryptocurrency" alt="img" height={240} width={100}/>
               </div>
-              <p className="">{news.article_title.length > 80 ? `${news.article_title.substring(0, 80)}...` : news.article_title}</p>
+              <p className="">{news.description.length > 60 ? `${news.description.substring(0, 60)}...` : news.description}</p>
               <div className="provider-container">
                 <div>
-                  <Text className="provider-name text-danger">{news.source}</Text>
+                  <Text className="provider-name text-danger">{source}</Text>
                 </div>
-                <Text>{moment(news.post_time_utc).startOf('ss').fromNow()}</Text>
+                <Text>{moment(news.date).startOf('ss').fromNow()}</Text>
               </div>
             </a>
           </Card>

@@ -21,7 +21,17 @@ const Dashboard = () => {
         // const statsurl = 'https://coinranking1.p.rapidapi.com/stats?referenceCurrencyUuid=yhjMzLPhuIDl';
         // const coinsurl = 'https://coinranking1.p.rapidapi.com/coins?referenceCurrencyUuid=yhjMzLPhuIDl&timePeriod=24h&tiers=1&orderBy=marketCap&orderDirection=desc&limit=50&offset=0';
         // const newsurl = 'https://real-time-finance-data.p.rapidapi.com/stock-news?symbol=AAPL%3ANASDAQ&language=en';
-         
+        const newsurl = 'https://crypto-news16.p.rapidapi.com/news/all';
+        
+        // const url = 'https://crypto-news-live11.p.rapidapi.com/all?page=1&per_page=5';
+        // const options = {
+        //   method: 'GET',
+        //   headers: {
+        //     'x-rapidapi-key': '53cafe9a16msh9e42f46b009f80ap11be03jsnec1d5f1aa24b',
+        //     'x-rapidapi-host': 'crypto-news-live11.p.rapidapi.com'
+        //   }
+        // };
+        
         //   const options1 = {
         //     method: 'GET',
         //     headers: {
@@ -37,19 +47,27 @@ const Dashboard = () => {
         //     }
         //   };
 
+        const options3 = {
+          method: 'GET',
+          headers: {
+            'x-rapidapi-key': '53cafe9a16msh9e42f46b009f80ap11be03jsnec1d5f1aa24b',
+            'x-rapidapi-host': 'crypto-news16.p.rapidapi.com'
+          }
+        };
+
         //   try {
         //     const response1 = await fetch(statsurl, options1);
         //     const globalstats = await response1.json();
             
         //     const response2 = await fetch(coinsurl, options1);
         //     const coinstats = await response2.json();
-          
-        //     const response3 = await fetch(newsurl, options2);
-	      //     const news = await response3.json();
 
-        //     dispatch(loadstats(globalstats.data));
-        //     dispatch(loadcoins(coinstats.data.coins));
-        //     dispatch(loadnews(news.data.news));
+            // const response3 = await fetch(newsurl, options3);
+            // const news = await response3.json();
+
+            // dispatch(loadstats(globalstats.data));
+            // dispatch(loadcoins(coinstats.data.coins));
+            // dispatch(loadnews(news));
 
             
           // } catch (error) {
@@ -109,18 +127,29 @@ const Dashboard = () => {
              {
               topnews[4] ? topnews.map((newsd, index)=>{
                     return(
-                     <Col
-                     xs={24} sm={12} lg={8}
-                       className="crypto-card"
-                       key={index}>
-                        {/* <Link to={`/crypto/${coin.uuid}`}> */}
-                          <Cardcomponent news={newsd} getnews/> 
-                        {/* </Link> */}
-                     </Col>
+                     <>
+                        {
+                          newsd.news.map((news, index)=>{
+                            if(index<2){
+                              return(
+                              <Col
+                                xs={24} sm={12} lg={8}
+                                  className="crypto-card"
+                                  key={index+1}>
+                                    <Cardcomponent key={index} news={news} source={newsd.source} getnews/> 
+                              </Col>
+                              )
+                            }
+                          })
+                        }
+                        </>
                    )
                  }) : <Skeleton active  className="mx-3"/>
              }
              </Row>
+             {
+              console.log(topnews)
+             }
       </div>
     </div>
   )

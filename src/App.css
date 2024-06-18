@@ -100,6 +100,7 @@ a.active {
 .news-image-container{
   display: flex !important;
   justify-content: space-between !important;
+  height: 130px;
 }
 .news-title{
   width: 70%;
@@ -123,3 +124,6 @@ a.active {
 /* .provider-name{
   margin-left: 10px;
 } */
+ .footer-section{
+  background-color: whitesmoke;
+ }
