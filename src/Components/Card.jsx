@@ -6,7 +6,7 @@ import moment from 'moment';
 const { Text, Title } = Typography;
 
 
-const Cardcomponent = ({coin, news, getcoin, getnews, source}) => {
+const Cardcomponent = ({coin, news, getcoin, getnews, source, imgurl, randomNumber}) => {
   if(getcoin){
     const change = Math.sign(Number(coin.change));
     // console.log(coin);
@@ -30,8 +30,8 @@ const Cardcomponent = ({coin, news, getcoin, getnews, source}) => {
        <Card hoverable className="news-card">
             <a href={news.url} target="_blank" rel="noreferrer">
               <div className="news-image-container">
-                <Title className="news-title" level={4}><span className="news-title">{news.title.length >50 ? `${news.title.substring(0,50)}...` : news.title}</span></Title>
-                <img className="img-fluid" src="https://source.unsplash.com/1600x800/random/?Cryptocurrency" alt="img" height={240} width={100}/>
+                <Title className="news-title mx-1" level={4}><span className="news-title">{news.title.length >50 ? `${news.title.substring(0,50)}...` : news.title}</span></Title>
+                 <img className="img-fluid" src={imgurl} alt="img" height={240} width={100}/>
               </div>
               <p className="">{news.description.length > 60 ? `${news.description.substring(0, 60)}...` : news.description}</p>
               <div className="provider-container">

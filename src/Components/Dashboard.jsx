@@ -13,25 +13,16 @@ const Dashboard = () => {
   const stats = useSelector(globaldata);
   const topcoins = useSelector(coinsdata);
   const topnews = useSelector(newsdata);
-  // const [newsCategory, setNewsCategory] = useState('Cryptocurrency');
-  const [count, setCount] = useState(8)
+  const [img, setImg] = useState([]);
   const dispatch = useDispatch();
+
   useEffect(() => {
       const fetchStats = async()=>{
         // const statsurl = 'https://coinranking1.p.rapidapi.com/stats?referenceCurrencyUuid=yhjMzLPhuIDl';
         // const coinsurl = 'https://coinranking1.p.rapidapi.com/coins?referenceCurrencyUuid=yhjMzLPhuIDl&timePeriod=24h&tiers=1&orderBy=marketCap&orderDirection=desc&limit=50&offset=0';
-        // const newsurl = 'https://real-time-finance-data.p.rapidapi.com/stock-news?symbol=AAPL%3ANASDAQ&language=en';
-        const newsurl = 'https://crypto-news16.p.rapidapi.com/news/all';
-        
-        // const url = 'https://crypto-news-live11.p.rapidapi.com/all?page=1&per_page=5';
-        // const options = {
-        //   method: 'GET',
-        //   headers: {
-        //     'x-rapidapi-key': '53cafe9a16msh9e42f46b009f80ap11be03jsnec1d5f1aa24b',
-        //     'x-rapidapi-host': 'crypto-news-live11.p.rapidapi.com'
-        //   }
-        // };
-        
+        // const newsurl = 'https://crypto-news16.p.rapidapi.com/news/all';
+        // const imgurl = 'https://api.pexels.com/v1/search?page=2&per_page=40&query=Cryptocurrency';
+       
         //   const options1 = {
         //     method: 'GET',
         //     headers: {
@@ -39,32 +30,37 @@ const Dashboard = () => {
         //       'x-rapidapi-host': 'coinranking1.p.rapidapi.com'
         //     }
         //   };
-        //   const options2 = {
-        //     method: 'GET',
-        //     headers: {
-        //       'x-rapidapi-key': '53cafe9a16msh9e42f46b009f80ap11be03jsnec1d5f1aa24b',
-        //       'x-rapidapi-host': 'real-time-finance-data.p.rapidapi.com'
-        //     }
-        //   };
 
-        const options3 = {
-          method: 'GET',
-          headers: {
-            'x-rapidapi-key': '53cafe9a16msh9e42f46b009f80ap11be03jsnec1d5f1aa24b',
-            'x-rapidapi-host': 'crypto-news16.p.rapidapi.com'
-          }
-        };
+        // const newsoption = {
+        //   method: 'GET',
+        //   headers: {
+        //     'x-rapidapi-key': '53cafe9a16msh9e42f46b009f80ap11be03jsnec1d5f1aa24b',
+        //     'x-rapidapi-host': 'crypto-news16.p.rapidapi.com'
+        //   }
+        // };
+       
+        // const imgoption = {
+        //       method: 'GET',
+        //       headers:{
+        //         Authorization : 'e8fA6FKIredSJ1oYF4ChzFrFDzEoa0GPFpvbuYxSrtYWy78NdexMyqZD'
+        //       }
+        //     }
 
         //   try {
+
         //     const response1 = await fetch(statsurl, options1);
         //     const globalstats = await response1.json();
             
         //     const response2 = await fetch(coinsurl, options1);
         //     const coinstats = await response2.json();
 
-            // const response3 = await fetch(newsurl, options3);
+            // const response3 = await fetch(newsurl, newsoption);
             // const news = await response3.json();
-
+            
+            // const response4 = await fetch(imgurl, imgoption);
+            // const img = await response4.json();
+            
+            // setImg(img.photos);
             // dispatch(loadstats(globalstats.data));
             // dispatch(loadcoins(coinstats.data.coins));
             // dispatch(loadnews(news));
@@ -125,18 +121,19 @@ const Dashboard = () => {
             }
             <Row gutter={[30,30]} className="crypto-card-container my-2">
              {
-              topnews[4] ? topnews.map((newsd, index)=>{
+              topnews[4] ? topnews.map((newsd, topindex)=>{
                     return(
                      <>
                         {
                           newsd.news.map((news, index)=>{
                             if(index<2){
+                              const randomNumber = Math.floor(Math.random() * (39-0))+0;
                               return(
                               <Col
                                 xs={24} sm={12} lg={8}
                                   className="crypto-card"
-                                  key={index+1}>
-                                    <Cardcomponent key={index} news={news} source={newsd.source} getnews/> 
+                                  key={randomNumber+1}>
+                                    <Cardcomponent key={randomNumber-1} news={news} source={newsd.source} randomNumber={randomNumber} imgurl={img.length>20 ? img[randomNumber].src.medium : 'https://images.pexels.com/photos/5980887/pexels-photo-5980887.jpeg'} getnews/> 
                               </Col>
                               )
                             }

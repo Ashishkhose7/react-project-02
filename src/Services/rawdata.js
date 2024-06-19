@@ -236,3 +236,26 @@ const coins = [
 ]
 
 export {globalstats, coins, news}
+
+
+/*
+ // const newsurl(optional) = 'https://real-time-finance-data.p.rapidapi.com/stock-news?symbol=AAPL%3ANASDAQ&language=en';
+//   const options2 = {
+//     method: 'GET',
+//     headers: {
+//       'x-rapidapi-key': '53cafe9a16msh9e42f46b009f80ap11be03jsnec1d5f1aa24b',
+//       'x-rapidapi-host': 'real-time-finance-data.p.rapidapi.com'
+//     }
+//   };
+
+ // const url = 'https://crypto-news-live11.p.rapidapi.com/all?page=1&per_page=5';
+  // const options = {
+  //   method: 'GET',
+  //   headers: {
+  //     'x-rapidapi-key': '53cafe9a16msh9e42f46b009f80ap11be03jsnec1d5f1aa24b',
+  //     'x-rapidapi-host': 'crypto-news-live11.p.rapidapi.com'
+  //   }
+  // };
+
+
+*/
