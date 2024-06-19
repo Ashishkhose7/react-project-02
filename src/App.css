@@ -86,6 +86,17 @@ a.active {
 .dash-heading{
   font-weight: normal;
 }
+.home-heading-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 40px;
+    width: 97%;
+}
+.show-more{
+    margin-top: 0px !important;
+    font-weight: normal;
+}
 .card{
   /* border: 0; */
   /* border: 2px solid lightgray; */
@@ -127,3 +138,38 @@ a.active {
  .footer-section{
   background-color: whitesmoke;
  }
+ .inputcontainer {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.email-input {
+  flex-grow: 1;
+  padding: 8px;
+  border: none;
+  font-size: 16px;
+  font-weight: normal;
+}
+.email-input:focus{
+  outline: none;
+}
+.email-input::placeholder{
+  font-weight: normal;
+  font-size: 15px;
+}
+.subscribe-btn {
+  border: 1px solid blueviolet;
+  color: lightslategray;
+  border-radius: 0px 4px 4px 0px;
+  padding: 8px 16px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-left: 8px;
+}
+.subscribe-btn:hover{
+  background-color: blueviolet ;
+  border: 1px solid blueviolet;
+  color: #fff;
+}

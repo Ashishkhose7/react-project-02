@@ -1,20 +1,28 @@
 import React, { useEffect, useState } from "react"
-import { Link, NavLink, useLocation } from "react-router-dom";
+import { Link, NavLink, useLocation, useNavigate } from "react-router-dom";
 
 const Navigation = (props) => {
   const [tab, setTab] = useState("");
+  const navigate = useNavigate();
   const location = useLocation();
 
   useEffect(() => {
       const path = location.pathname;
       if(path == '/dashboard'){
         setTab(path);
+        navigate("dashboard")
       }else if(path == '/cryptocurrencies'){
         setTab(path);
+        navigate("cryptocurrencies")
       }else if(path == '/exchanges'){
         setTab(path);
+        navigate("exchanges")
       }else if(path == '/news'){
         setTab(path);
+        navigate("news")
+      }else{
+        setTab('dashboard');
+        navigate('dashboard')
       }
       window.scrollTo(0,0);
   }, [location.pathname])

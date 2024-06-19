@@ -1,16 +1,9 @@
-import { Outlet, useNavigate } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 import Navigation from "../Components/Navigation";
 import Footer from "../Components/Footer";
 
 import '../App.css';
-import { useEffect } from "react";
 const LayoutComponent = () => {
-  const navigate = useNavigate();
-
-  useEffect(() => {
-    navigate("dashboard")
-  }, [])
-  
     return (
       <div className="container-fluid m-0 p-0">
           <div className="flex-container">

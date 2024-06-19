@@ -114,10 +114,14 @@ const Dashboard = () => {
              }
              </Row>
       </div>
-
+     
       <div className="row latest-news mt-5">
             {
-              topnews[4] ? <Title level={3} className="heading"><span className="dash-heading">Latest Market News</span></Title> : 'Latest Crypto News'
+              topnews[4] ? <div className="home-heading-container">
+                 <Title level={3} className="heading"><span className="dash-heading">Latest Market News</span></Title>
+                 <Title level={5} className="show-more mr-5"><Link to="/news">Show more</Link></Title>
+
+              </div> : 'Latest Crypto News'
             }
             <Row gutter={[30,30]} className="crypto-card-container my-2">
              {
@@ -144,9 +148,6 @@ const Dashboard = () => {
                  }) : <Skeleton active  className="mx-3"/>
              }
              </Row>
-             {
-              console.log(topnews)
-             }
       </div>
     </div>
   )
