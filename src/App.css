@@ -97,10 +97,11 @@ a.active {
     margin-top: 0px !important;
     font-weight: normal;
 }
-.card{
+.maincard{
   /* border: 0; */
   /* border: 2px solid lightgray; */
-  height: 180px;
+  border: none;
+  height: 235px;
   width: 200px;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -123,6 +124,10 @@ a.active {
   width:100px;
   height:80px;
 }
+.news-card-container .img{
+  width:100px;
+  height:80px;
+}
 .news-card p{
   color: darkslategray;
   margin: 10px 0px !important;
@@ -138,6 +143,8 @@ a.active {
  .footer-section{
   background-color: whitesmoke;
  }
+
+ 
  .inputcontainer {
   display: flex;
   align-items: center;
@@ -160,16 +167,29 @@ a.active {
   font-size: 15px;
 }
 .subscribe-btn {
-  border: 1px solid blueviolet;
   color: lightslategray;
   border-radius: 0px 4px 4px 0px;
   padding: 8px 16px;
   font-size: 16px;
   cursor: pointer;
   margin-left: 8px;
+  border: 1px solid #ccc;
 }
 .subscribe-btn:hover{
   background-color: blueviolet ;
   border: 1px solid blueviolet;
   color: #fff;
+}
+.newssource{
+  font-size: 11px;
+  float: right;
+}
+.newscontent{
+  font-size: 10px;
+}
+.news-card-container{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
 }
