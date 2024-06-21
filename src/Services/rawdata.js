@@ -257,5 +257,11 @@ export {globalstats, coins, news}
   //   }
   // };
 
-
+<div key={ar} className="card maincard mx-3 mb-3 rounded shadow-md">
+                            <img src="https://images.pexels.com/photos/5980887/pexels-photo-5980887.jpeg" alt="" className="img-fluid"/>
+                            <div className="card-body p-2">
+                              <p className="newssource">Source</p><br />
+                              <p className="newscontent">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet repellendus maiores tempora possimus....</p>
+                            </div>
+                      </div> 
 */

@@ -83,11 +83,33 @@ const Dashboard = () => {
         {
           stats.totalMarkets ?
               <Row gutter={[30, 30]} className="my-3">
-                <Col span={8}><Statistic title="Total Cryptocurrencies" value={stats.totalCoins || 0} valueStyle={{color: 'darkslateblue'}}/></Col>
-                <Col span={8}><Statistic title="Total Exchanges" value={stats.totalExchanges || 0} valueStyle={{color: 'darkslateblue'}}/></Col>
-                <Col span={8}><Statistic title="Total Market Cap:" value={`$${millify(stats.totalMarketCap)}`} valueStyle={{color: 'darkslateblue'}}/></Col>
-                <Col span={8}><Statistic title="Total 24h Volume" value={`$${millify(stats.total24hVolume)}`} valueStyle={{color: 'darkslateblue'}}/></Col>
-                <Col span={8}><Statistic title="Total Markets" value={`${millify(stats.totalMarkets)}`} valueStyle={{color: 'darkslateblue'}}/></Col>
+                <Col span={6}>
+                  <div className="outline-div"><Statistic title="Total Cryptocurrencies" value={stats.totalCoins || 0} valueStyle={{color: 'darkslateblue'}}/></div>
+                </Col>
+                <Col span={6}>
+                  <div className="outline-div">
+                    <Statistic title="Total Exchanges" value={stats.totalExchanges || 0} valueStyle={{color: 'darkslateblue'}}/>
+                  </div>
+                
+                </Col>
+                <Col span={6}>
+                  <div className="outline-div">
+                    <Statistic title="Total Market Cap:" value={`$${millify(stats.totalMarketCap)}`} valueStyle={{color: 'darkslateblue'}}/>
+                  </div>
+                
+                </Col>
+                <Col span={6}>
+                  <div className="outline-div">
+                    <Statistic title="Total 24h Volume" value={`$${millify(stats.total24hVolume)}`} valueStyle={{color: 'darkslateblue'}}/>
+                  </div>
+                
+                </Col>
+                <Col span={6}>
+                  <div className="outline-div">
+                    <Statistic title="Total Markets" value={`${millify(stats.totalMarkets)}`} valueStyle={{color: 'darkslateblue'}}/>
+                  </div>
+                
+                </Col>
               </Row>
            :  <Skeleton active />
         }     
