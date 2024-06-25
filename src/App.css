@@ -127,11 +127,15 @@ a.active {
   padding: 0px 8px;
   border-radius: 4px;
   background-color: #90ee905b;
+  display: flex;
+  align-items: center;
 }
 .negativechangep{
   padding: 0px 8px;
   border-radius: 4px;
   background-color: #ff63472c;
+  display: flex;
+  align-items: center;
 }
 .news-card{
   min-height: 260px !important;
@@ -231,7 +235,20 @@ a.active {
   text-decoration: underline;
   cursor: pointer;
 }
+/* Echanges */
+.table tbody tr td, .table th{
+  padding: 16px 0px;
+}
+.table{
+  /* text-align: center; */
+}
+.exchanges a{
+  text-decoration: underline;
+  cursor: pointer;
 
+}
+
+/* Footer */
 .footer {
     background-color: #1e2736;
     color: white;

@@ -1,6 +1,7 @@
 import React from "react"
-import { Avatar, Card, Typography } from 'antd';
-import { TrendingUpIcon , TrendingDownIcon  } from '@mui/icons-material';
+import {  Card, Typography } from 'antd';
+import TrendingUpIcon from '@mui/icons-material/TrendingUp';
+import TrendingDownIcon from '@mui/icons-material/TrendingDown';
 // import moment from 'moment';
 import millify from 'millify';
 import moment from 'moment';
@@ -17,7 +18,7 @@ const Cardcomponent = ({coin, news, getcoin, getnews, source, imgurl, randomNumb
         title={`${coin.rank}. ${coin.name}`}
         extra={<img className="crypto-image" src={coin.iconUrl} height={32} width={32} />}
         style={{
-            width: 240,
+            width: 250,
             borderRadius: 18,
             boxShadow: '0 0 20px rgb(244 237 237)',
             border: 0
@@ -26,7 +27,10 @@ const Cardcomponent = ({coin, news, getcoin, getnews, source, imgurl, randomNumb
         >
         <p className="text-muted">Price: {millify(coin.price)}</p>
         <p className="text-muted">Market Cap: {millify(coin.marketCap)}</p>
-        <p className="text-muted">Daily Change:&nbsp; <TrendingUpIcon /><span className={change==1?'text-success positivechangep':'text-danger negativechangep'}>&nbsp;<i className={change==1?'fa-solid fa-sort-up changeicon1':'fa-solid fa-sort-down changeicon2'}></i>&nbsp;{coin.change}%</span></p>
+        <p className="text-muted d-flex align-items-center">Daily Change:&nbsp; <span className={change==1?'text-success positivechangep':'text-danger negativechangep'}>&nbsp;
+          { change==1 ? <TrendingUpIcon style={{fontSize: 21}}/> : <TrendingDownIcon style={{fontSize: 21}}/> }
+          {/* <i className={change==1?'fa-solid fa-sort-up changeicon1':'fa-solid fa-sort-down changeicon2'}></i> */}
+          &nbsp;{coin.change}%</span></p>
       </Card>
     )
   }else if(getnews){
