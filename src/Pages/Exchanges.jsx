@@ -38,15 +38,15 @@ const Exchanges = (props) => {
          <table class="table">
           <thead class="table-light">
           <tr>
-            <th scope="col" className="px-5">Rank</th>
-            <th scope="col-2" style={{width: '30%'}}>Exchanges</th>
-            <th scope="col" style={{width: '25%'}}>24h Trade Volume</th>
-            <th scope="col" style={{width: '20%'}}>Trust Score&nbsp;
+            <th scope="col" className=" px-3 text-center" style={{width: '15%'}}>Rank</th>
+            <th scope="col-2" className="" style={{width: '20%'}}>Exchanges</th>
+            <th scope="col" className=" text-center" style={{width: '20%'}} >24h Trade Volume</th>
+            <th scope="col" className=" text-center" style={{width: '20%'}}>Trust Score&nbsp;
             <LightTooltip title="Trust Score is a rating algorithm developed to evaluate the legitimacy of an exchange’s trading volume. Trust Score is calculated on a range of metrics such as liquidity, scale of operations, cybersecurity score, and more. ">
                 <InfoOutlinedIcon style={{cursor: 'pointer'}}/>
             </LightTooltip>
             </th>
-            <th scope="col" style={{width: '10%'}}>Web</th>
+            <th scope="col" className="text-center" style={{width: '10%'}}>Web</th>
           </tr>
           </thead>
           <tbody>
@@ -54,15 +54,15 @@ const Exchanges = (props) => {
               exchanges.map((i,index)=>{
                 return(
                   <tr>
-                    <th scope="row" className="px-5">{i.trust_score_rank}</th>
+                    <th scope="row" className="px-3 text-center">{i.trust_score_rank}</th>
                     <td>
                       <img src={i.image} alt="" height={25} width={25} />
                     &nbsp; {i.name}
                     </td>
-                    <td>${millify(i.trade_volume_24h_btc_normalized)}</td>
-                    <td><span class={i.trust_score>7 ? "badge text-bg-success" : "badge text-bg-warning"}>{i.trust_score}/10</span>
+                    <td className="text-center">${millify(i.trade_volume_24h_btc_normalized)}</td>
+                    <td className="text-center"><span class={i.trust_score>7 ? "badge text-bg-success" : "badge text-bg-warning"}>{i.trust_score}/10</span>
                     </td>
-                    <td><a href={i.url} target="_blank" className="text-primary hover">See</a></td>
+                    <td className="text-center"><a href={i.url} target="_blank"  rel="noreferrer" className="text-center text-primary hover">See</a></td>
                   </tr>
                 )
               })

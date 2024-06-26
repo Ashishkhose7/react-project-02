@@ -20,7 +20,8 @@ const Navigation = (props) => {
       }else if(path == '/news'){
         setTab(path);
         navigate("news")
-      }else{
+      }
+      else if(path == '/'){
         setTab('dashboard');
         navigate('dashboard')
       }

@@ -7,7 +7,7 @@ const globalstats = {
 } 
 const coins = [
     {
-      uuid:"Qwsogvtv82FCsdadd",
+      uuid:"Qwsogvtv82FCd",
       symbol:"BTC",
       name:"Bitcoin",
       color:"#f7931A",
