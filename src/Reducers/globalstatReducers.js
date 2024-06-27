@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { globalstats, coins, news } from "../Services/rawdata";
+// import { globalstats, coins, news } from "../Services/rawdata";
 
 export const globalstatSlice = createSlice({
     name: 'globalstats',

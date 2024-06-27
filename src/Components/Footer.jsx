@@ -10,25 +10,25 @@ const Footer = () => {
                 <div class="col-md-3">
                     <h5>INFO</h5>
                     <ul class="list-unstyled">
-                        <li><a href="#">Formats</a></li>
-                        <li><a href="#">FAQ</a></li>
-                        <li><a href="#">Status</a></li>
+                        <li><a href="/">Formats</a></li>
+                        <li><a href="/">FAQ</a></li>
+                        <li><a href="/">Status</a></li>
                     </ul>
                 </div>
                 <div class="col-md-3">
                     <h5>RESOURCES</h5>
                     <ul class="list-unstyled">
-                        <li><a href="#">Developer API</a></li>
-                        <li><a href="#">Tools</a></li>
-                        <li><a href="#">Blog</a></li>
+                        <li><a href="/">Developer API</a></li>
+                        <li><a href="/">Tools</a></li>
+                        <li><a href="/">Blog</a></li>
                     </ul>
                 </div>
                 <div class="col-md-3">
                     <h5>COMPANY</h5>
                     <ul class="list-unstyled">
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Terms of Service</a></li>
-                        <li><a href="#">Privacy</a></li>
+                        <li><a href="/">About Us</a></li>
+                        <li><a href="/">Terms of Service</a></li>
+                        <li><a href="/">Privacy</a></li>
                     </ul>
                 </div>
                 <div class="col-md-3">
@@ -41,9 +41,9 @@ const Footer = () => {
                     </form>
                     <h5 class="mt-4">Follow us</h5>
                     <div class="social-icons">
-                        <a href="#"><i class="fa-brands fa-square-facebook"></i></a>
-                        <a href="#"><i class="fa-brands fa-square-instagram"></i></a>
-                        <a href="#"><i class="fa-brands fa-square-x-twitter"></i></a>
+                        <a href="/"><i class="fa-brands fa-square-facebook"></i></a>
+                        <a href="/"><i class="fa-brands fa-square-instagram"></i></a>
+                        <a href="/"><i class="fa-brands fa-square-x-twitter"></i></a>
                     </div>
                 </div>
             </div>

@@ -74,7 +74,7 @@ const News = () => {
                   {
                   news[0] ?  news.map((newss, index)=>{
                     if(index>25){
-                      return
+                      return ''
                     }else{
                       return(
                         <a key={index} href={newss.url} target="_blank" rel="noreferrer" className="mb-3">
@@ -102,7 +102,7 @@ const News = () => {
                         {
                         topn[5] ? topn.map((top, index)=>{
                           if(index>25){
-                            return
+                            return ''
                           }else{
                             return(
                               <a key={index} href={top.url} target="_blank" rel="noreferrer">

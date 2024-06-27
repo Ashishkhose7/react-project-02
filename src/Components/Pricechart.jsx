@@ -1,10 +1,10 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import React from "react"
 import { Col, Row, Typography } from 'antd';
 import Chart from 'chart.js/auto';
 import { Line } from 'react-chartjs-2';
 
 const { Title } = Typography;
-
 const Pricechart = ({ coinHistory, currentPrice, coinName, priceChange }) => {
     const change = Math.sign(Number(priceChange));
     const coinPrice = [];
