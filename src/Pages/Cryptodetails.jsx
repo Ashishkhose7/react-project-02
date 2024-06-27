@@ -49,7 +49,7 @@ const Cryptodetails = (props) => {
   }, [timePeriod])
 
   
-  if(coindata.status == 'success' && chartdata.status == 'success') {
+  if(coindata.status === 'success' && chartdata.status === 'success') {
     // console.log(coindata, "coindata")
     // console.log(chartdata, "chartdata")
 

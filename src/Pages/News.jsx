@@ -55,7 +55,6 @@ const News = (props) => {
             setIsLoading(false);
             dispatch(loadimg(img.photos));
 
-            // console.log(result);
           }else{
             setNews([]);
             setTopn([]);

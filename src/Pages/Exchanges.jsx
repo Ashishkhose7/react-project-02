@@ -56,7 +56,7 @@ const Exchanges = (props) => {
                   <tr key={index}>
                     <th scope="row" className="px-3 text-center">{i.trust_score_rank}</th>
                     <td>
-                      <img src={i.image} alt="" height={25} width={25} />
+                      <img src={i.image} alt="img" height={25} width={25} />
                     &nbsp; {i.name}
                     </td>
                     <td className="text-center">${millify(i.trade_volume_24h_btc_normalized)}</td>

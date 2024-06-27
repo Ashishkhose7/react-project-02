@@ -11,12 +11,11 @@ const { Text, Title } = Typography;
 const Cardcomponent = ({coin, news, getcoin, getnews, imgurl}) => {
   if(getcoin){
     const change = Math.sign(Number(coin.change));
-    // console.log(coin);
     return(
       <Card
       className="topcryptocard"
         title={`${coin.rank}. ${coin.name}`}
-        extra={<img className="crypto-image" src={coin.iconUrl} height={32} width={32} />}
+        extra={<img className="crypto-image" src={coin.iconUrl} alt="img" height={32} width={32} />}
         style={{
             width: 250,
             borderRadius: 18,
@@ -27,9 +26,8 @@ const Cardcomponent = ({coin, news, getcoin, getnews, imgurl}) => {
         >
         <p className="text-muted">Price: {millify(coin.price)}</p>
         <p className="text-muted">Market Cap: {millify(coin.marketCap)}</p>
-        <p className="text-muted d-flex align-items-center">Daily Change:&nbsp; <span className={change==1?'text-success positivechangep':'text-danger negativechangep'}>&nbsp;
-          { change==1 ? <TrendingUpIcon style={{fontSize: 21}}/> : <TrendingDownIcon style={{fontSize: 21}}/> }
-          {/* <i className={change==1?'fa-solid fa-sort-up changeicon1':'fa-solid fa-sort-down changeicon2'}></i> */}
+        <p className="text-muted d-flex align-items-center">Daily Change:&nbsp; <span className={change===1?'text-success positivechangep':'text-danger negativechangep'}>&nbsp;
+          { change===1 ? <TrendingUpIcon style={{fontSize: 21}}/> : <TrendingDownIcon style={{fontSize: 21}}/> }
           &nbsp;{coin.change}%</span></p>
       </Card>
     )

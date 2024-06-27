@@ -8,20 +8,20 @@ const Navigation = (props) => {
 
   useEffect(() => {
       const path = location.pathname;
-      if(path == '/dashboard'){
+      if(path === '/dashboard'){
         setTab(path);
         navigate("dashboard")
-      }else if(path == '/cryptocurrencies'){
+      }else if(path === '/cryptocurrencies'){
         setTab(path);
         navigate("cryptocurrencies")
-      }else if(path == '/exchanges'){
+      }else if(path === '/exchanges'){
         setTab(path);
         navigate("exchanges")
-      }else if(path == '/news'){
+      }else if(path === '/news'){
         setTab(path);
         navigate("news")
       }
-      else if(path == '/'){
+      else if(path === '/'){
         setTab('dashboard');
         navigate('dashboard')
       }
@@ -39,7 +39,7 @@ const Navigation = (props) => {
             <div className="row d-flex justify-content-center mx-1">
                 <div className="col-5 m-0 p-0 mb-4 text-center">
                   <NavLink to="/dashboard" className={({ isActive }) => (isActive ? 'active' : '')}> 
-                      <div className={tab=='/dashboard'? 'manu-tab': 'menu-btn'}>
+                      <div className={tab==='/dashboard'? 'manu-tab': 'menu-btn'}>
                         <i className="fa-solid fa-bars"></i>
                       </div>
                       <span>Dashboard</span>
@@ -47,7 +47,7 @@ const Navigation = (props) => {
                 </div>
                 <div className="col-5 m-0 p-0 mb-4">
                   <NavLink to="/cryptocurrencies" className={({ isActive }) => (isActive ? 'active' : '')}>
-                      <div className={tab=='/cryptocurrencies'? 'manu-tab': 'menu-btn'}>
+                      <div className={tab==='/cryptocurrencies'? 'manu-tab': 'menu-btn'}>
                         <i className="fa-solid fa-baht-sign"></i>
                       </div>
                       <span>Currency</span>
@@ -55,7 +55,7 @@ const Navigation = (props) => {
                 </div>
                 <div className="col-5 m-0 p-0 mb-4">
                   <NavLink to="/exchanges" className={({ isActive }) => (isActive ? 'active' : '')}>
-                      <div className={tab=='/exchanges'? 'manu-tab': 'menu-btn'}>
+                      <div className={tab==='/exchanges'? 'manu-tab': 'menu-btn'}>
                       <i className="fa-solid fa-building"></i>
                       </div>
                       <span>Exchanges</span>
@@ -63,7 +63,7 @@ const Navigation = (props) => {
                 </div>
                 <div className="col-5 m-0 p-0 mb-4">
                   <NavLink to="/news" className={({ isActive }) => (isActive ? 'active' : '')}>
-                      <div className={tab=='/news'? 'manu-tab': 'menu-btn'}>
+                      <div className={tab==='/news'? 'manu-tab': 'menu-btn'}>
                       <i className="fa-solid fa-lightbulb"></i>
                       </div>
                       <span>News</span>
