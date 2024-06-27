@@ -8,7 +8,7 @@ import moment from 'moment';
 const { Text, Title } = Typography;
 
 
-const Cardcomponent = ({coin, news, getcoin, getnews, source, imgurl, randomNumber}) => {
+const Cardcomponent = ({coin, news, getcoin, getnews, imgurl}) => {
   if(getcoin){
     const change = Math.sign(Number(coin.change));
     // console.log(coin);
@@ -45,7 +45,7 @@ const Cardcomponent = ({coin, news, getcoin, getnews, source, imgurl, randomNumb
               <p className="">{news.description.length > 60 ? `${news.description.substring(0, 60)}...` : news.description}</p>
               <div className="provider-container">
                 <div>
-                  <Text className="provider-name text-danger">{source}</Text>
+                  <Text className="provider-name text-danger">{news.url.split('.')[1]}</Text>
                 </div>
                 <Text>{moment(news.date).startOf('ss').fromNow()}</Text>
               </div>

@@ -20,7 +20,7 @@ const Dashboard = () => {
       const fetchStats = async()=>{
         const statsurl = 'https://coinranking1.p.rapidapi.com/stats?referenceCurrencyUuid=yhjMzLPhuIDl';
         const coinsurl = 'https://coinranking1.p.rapidapi.com/coins?referenceCurrencyUuid=yhjMzLPhuIDl&timePeriod=24h&tiers=1&orderBy=marketCap&orderDirection=desc&limit=50&offset=0';
-        const newsurl = 'https://crypto-news16.p.rapidapi.com/news/all';
+        const newsurl = 'https://crypto-news16.p.rapidapi.com/news/top/10';
         const imgurl = 'https://api.pexels.com/v1/search?per_page=200&query=Cryptocurrency';
        
           const options1 = {
@@ -152,24 +152,13 @@ const Dashboard = () => {
              {
               topnews[4] ? topnews.map((newsd, topindex)=>{
                     return(
-                     <>
-                        {
-                          newsd.news.map((news, index)=>{
-                            if(index<2){
-                              const randomNumber = Math.floor(Math.random() * (39-0))+0;
-                              return(
-                              <Col
-                                xs={24} sm={12} lg={8}
-                                  className="crypto-card"
-                                  key={randomNumber+1}>
-                                    <Cardcomponent key={randomNumber-1} news={news} source={newsd.source} randomNumber={randomNumber} imgurl={imgurls.length>20 ? imgurls[randomNumber] : 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTw_HeSzHfBorKS4muw4IIeVvvRgnhyO8Gn8w&s'} getnews/> 
-                              </Col>
-                              )
-                            }
-                          })
-                        }
-                        </>
-                   )
+                          <Col
+                            xs={24} sm={12} lg={8}
+                              className="crypto-card"
+                              key={topindex}>
+                                <Cardcomponent news={newsd}  imgurl={imgurls.length>20 ? imgurls[topindex] : 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTw_HeSzHfBorKS4muw4IIeVvvRgnhyO8Gn8w&s'} getnews/> 
+                          </Col>
+                        )
                  }) : <Skeleton active  className="mx-3"/>
              }
              </Row>

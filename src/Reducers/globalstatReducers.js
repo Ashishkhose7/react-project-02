@@ -19,17 +19,7 @@ export const globalstatSlice = createSlice({
             // console.log(action.payload.slice(0, 10));
         },
         loadnews:(state, action)=>{
-            // state.news = action.payload;
-            for (const key in action.payload) {
-                // console.log(key)
-                let obj = {
-                    source: key,
-                    news: action.payload[key]
-                }
-                state.news.push(obj);
-                console.log(obj);
-
-            }
+            state.news = action.payload;
         },
         loadimg:(state, action)=>{
             state.imgdata = [];
