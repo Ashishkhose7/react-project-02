@@ -26,7 +26,7 @@ const Cryptodetails = (props) => {
     const options = {
       method: 'GET',
       headers: {
-        'x-rapidapi-key': '53cafe9a16msh9e42f46b009f80ap11be03jsnec1d5f1aa24b',
+        'x-rapidapi-key': process.env.REACT_APP_RAPIDAPI_KEY,
         'x-rapidapi-host': 'coinranking1.p.rapidapi.com'
       }
     };

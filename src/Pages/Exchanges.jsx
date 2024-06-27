@@ -19,12 +19,11 @@ const LightTooltip = styled(({ className, ...props }) => (
 
 const Exchanges = (props) => {
   const [exchanges, setExchages] = useState([]);
-
   useEffect(() => {
     const fetchStats = async() => {
     const options = {
       method: 'GET',
-      headers: {accept: 'application/json', 'x-cg-demo-api-key': 'CG-iNUk9rti1mViHHgQSmT1hHz8'}
+      headers: {accept: 'application/json', 'x-cg-demo-api-key': process.env.REACT_APP_EXCHANGE_API_KEY}
     };
       const response = await fetch('https://api.coingecko.com/api/v3/exchanges', options);
       const data = await response.json();
@@ -54,7 +53,7 @@ const Exchanges = (props) => {
             {
              exchanges[0] ? exchanges.map((i,index)=>{
                 return(
-                  <tr>
+                  <tr key={index}>
                     <th scope="row" className="px-3 text-center">{i.trust_score_rank}</th>
                     <td>
                       <img src={i.image} alt="" height={25} width={25} />
