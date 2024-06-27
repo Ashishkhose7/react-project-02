@@ -36,7 +36,7 @@ const News = (props) => {
         const imgoption = {
           method: 'GET',
           headers:{
-            Authorization : 'e8fA6FKIredSJ1oYF4ChzFrFDzEoa0GPFpvbuYxSrtYWy78NdexMyqZD'
+            Authorization : process.env.REACT_APP_IMG_API_KEY
           }
         }
 
