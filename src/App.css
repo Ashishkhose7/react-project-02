@@ -108,14 +108,17 @@ a.active {
   /* border: 0; */
   border: none;
   /* border: 2px solid lightgray; */
-  max-height: 220px;
+  height: 220px;
   width: 200px;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: none;
+  box-shadow: none ;
 }
 .maincard img{
   height: 110px;
   width: 100%;
+}
+.news-card-container .card{
+  box-shadow: none;
 }
 .outline-div{
   box-shadow: 0 0 20px rgb(244 237 237);
@@ -225,6 +228,7 @@ a.active {
 }
 .newscontent{
   font-size: 12px;
+  color: darkslategray;
 }
 .news-card-container{
   display: flex;

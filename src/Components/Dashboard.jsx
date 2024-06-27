@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react"
 import { Typography, Row, Col, Statistic } from 'antd';
 import millify from 'millify';
 import {useDispatch, useSelector} from 'react-redux';
-import { globaldata, loadstats, loadcoins, loadnews, coinsdata, newsdata } from "../Reducers/globalstatReducers";
+import { globaldata, loadstats, loadcoins, loadnews, loadimg, coinsdata, newsdata, imgdata } from "../Reducers/globalstatReducers";
 import { Skeleton } from 'antd';
 import Cardcomponent from "./Card";
 import { Link } from "react-router-dom";
@@ -13,6 +13,7 @@ const Dashboard = () => {
   const stats = useSelector(globaldata);
   const topcoins = useSelector(coinsdata);
   const topnews = useSelector(newsdata);
+  const imgurls = useSelector(imgdata);
   const [img, setImg] = useState([]);
   const dispatch = useDispatch();
 
@@ -21,7 +22,7 @@ const Dashboard = () => {
         // const statsurl = 'https://coinranking1.p.rapidapi.com/stats?referenceCurrencyUuid=yhjMzLPhuIDl';
         // const coinsurl = 'https://coinranking1.p.rapidapi.com/coins?referenceCurrencyUuid=yhjMzLPhuIDl&timePeriod=24h&tiers=1&orderBy=marketCap&orderDirection=desc&limit=50&offset=0';
         // const newsurl = 'https://crypto-news16.p.rapidapi.com/news/all';
-        // const imgurl = 'https://api.pexels.com/v1/search?page=2&per_page=40&query=Cryptocurrency';
+        const imgurl = 'https://api.pexels.com/v1/search?per_page=200&query=Cryptocurrency';
        
         //   const options1 = {
         //     method: 'GET',
@@ -39,14 +40,14 @@ const Dashboard = () => {
         //   }
         // };
        
-        // const imgoption = {
-        //       method: 'GET',
-        //       headers:{
-        //         Authorization : 'e8fA6FKIredSJ1oYF4ChzFrFDzEoa0GPFpvbuYxSrtYWy78NdexMyqZD'
-        //       }
-        //     }
+        const imgoption = {
+              method: 'GET',
+              headers:{
+                Authorization : 'e8fA6FKIredSJ1oYF4ChzFrFDzEoa0GPFpvbuYxSrtYWy78NdexMyqZD'
+              }
+            }
 
-        //   try {
+          try {
 
         //     const response1 = await fetch(statsurl, options1);
         //     const globalstats = await response1.json();
@@ -57,18 +58,18 @@ const Dashboard = () => {
             // const response3 = await fetch(newsurl, newsoption);
             // const news = await response3.json();
             
-            // const response4 = await fetch(imgurl, imgoption);
-            // const img = await response4.json();
+            const response4 = await fetch(imgurl, imgoption);
+            const img = await response4.json();
             
             // setImg(img.photos);
             // dispatch(loadstats(globalstats.data));
             // dispatch(loadcoins(coinstats.data.coins));
             // dispatch(loadnews(news));
-
+            dispatch(loadimg(img.photos));
             
-          // } catch (error) {
-          //   console.error(error);
-          // }
+          } catch (error) {
+            console.error(error);
+          }
       }
       fetchStats();
   }, [])
@@ -117,7 +118,11 @@ const Dashboard = () => {
        
       <div className="row top-crypto mt-5">
             {
-              topcoins[4] ? <Title level={3} className="heading"><span className="dash-heading">Top 10 Cryptos In The World</span></Title> : 'Top 10 Cryptos In The World'
+              topcoins[4] ? <div className="home-heading-container">
+              <Title level={3} className="heading"><span className="dash-heading">Top 10 Cryptos In The World</span></Title>
+              <Title level={5} className="show-more mr-5"><Link to="/cryptocurrencies">Show more</Link></Title>
+
+           </div> : 'Top 10 Cryptos In The World'
             }
             <Row gutter={[30,30]} className="crypto-card-container my-2">
              {
@@ -159,7 +164,7 @@ const Dashboard = () => {
                                 xs={24} sm={12} lg={8}
                                   className="crypto-card"
                                   key={randomNumber+1}>
-                                    <Cardcomponent key={randomNumber-1} news={news} source={newsd.source} randomNumber={randomNumber} imgurl={img.length>20 ? img[randomNumber].src.medium : 'https://images.pexels.com/photos/5980887/pexels-photo-5980887.jpeg'} getnews/> 
+                                    <Cardcomponent key={randomNumber-1} news={news} source={newsd.source} randomNumber={randomNumber} imgurl={imgurls.length>20 ? imgurls[randomNumber] : 'https://images.pexels.com/photos/5980887/pexels-photo-5980887.jpeg'} getnews/> 
                               </Col>
                               )
                             }

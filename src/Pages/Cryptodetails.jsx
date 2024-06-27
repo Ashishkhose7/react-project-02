@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react"
 import { useParams } from "react-router-dom";
 import millify from "millify";
 import { Col, Row, Typography, Select } from 'antd';
+import { Skeleton } from 'antd';
 import { MoneyCollectOutlined, DollarCircleOutlined, FundOutlined, ExclamationCircleOutlined, StopOutlined, TrophyOutlined, CheckOutlined, NumberOutlined, ThunderboltOutlined } from '@ant-design/icons';
 import Chart from '../Components/Pricechart';
 const { Title, Text } = Typography;
@@ -13,8 +14,6 @@ const Cryptodetails = (props) => {
   const [timePeriod, setTimeperiod] = useState('7d');
   const [coindata, setCoindata] = useState({});
   const [chartdata, setChartdata] = useState({});
-  // let coindata = {};
-  // let chartdata = {};
   const time = ['3h', '24h', '7d', '30d', '1y', '3m', '3y', '5y'];
 
   useEffect(() => {
@@ -31,20 +30,13 @@ const Cryptodetails = (props) => {
     };
 
     const fetchData = async () => {
-      // setCoindata({});
-      // setChartdata({});
       try {
         const response = await fetch(coinurl, options);
         const data = await response.json();
         const response2 = await fetch(charturl, options);
         const data2 = await response2.json();
-        // coindata = data;
-        // chartdata = data2;
         setCoindata(data);
         setChartdata(data2);
-        console.log(timePeriod, "timeperiod");
-        // console.log(coindata , "coindtaa");
-        // console.log(chartdata , "chartdata");
       } catch (error) {
         console.log(error);
       }
@@ -55,8 +47,8 @@ const Cryptodetails = (props) => {
 
   
   if(coindata.status == 'success' && chartdata.status == 'success') {
-    console.log(coindata, "coindata")
-    console.log(chartdata, "chartdata")
+    // console.log(coindata, "coindata")
+    // console.log(chartdata, "chartdata")
 
     const stats = [
       { title: 'Price to USD', value: `$ ${coindata.data.coin.price && millify(coindata.data.coin.price)}`, icon: <DollarCircleOutlined /> },
@@ -76,9 +68,6 @@ const Cryptodetails = (props) => {
 
   return (
     <div className="col-md-12 p-3">
-      {/* {
-          console.log(chartdata.data.history, coindata.data.price, coindata.data.name)
-        } */}
       <div className="cryptodetails py-3 border-bottom">
           <div className="heading text-center">
               <Title level={2} className="coin-name text-primary">
@@ -149,7 +138,12 @@ const Cryptodetails = (props) => {
     </div>
   )
 }else{
- return( <p>Loading..</p> )
+ return( 
+      <div className="col-md-12 mt-5">
+        <Skeleton active  className="mx-3"/>
+        <Skeleton active  className="mx-3"/>
+      </div>
+  )
 }
 };
 

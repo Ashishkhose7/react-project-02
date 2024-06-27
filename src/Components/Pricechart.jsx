@@ -1,9 +1,7 @@
 import React from "react"
 import { Col, Row, Typography } from 'antd';
-import { Line } from 'react-chartjs-2';
 import Chart from 'chart.js/auto';
-
-
+import { Line } from 'react-chartjs-2';
 
 const { Title } = Typography;
 
@@ -15,7 +13,6 @@ const Pricechart = ({ coinHistory, currentPrice, coinName, priceChange }) => {
       coinPrice.push(coinHistory[key].price);
       coinTimestamp.push(new Date(coinHistory[key].timestamp * 1000).toLocaleDateString());
     }
-
 
     const data = {
         labels: coinTimestamp,
@@ -42,8 +39,6 @@ const Pricechart = ({ coinHistory, currentPrice, coinName, priceChange }) => {
         //   ],
         // },
       };
-
-
 
   return (
     <div className="col-md-12 chart">

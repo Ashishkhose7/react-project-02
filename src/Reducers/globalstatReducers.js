@@ -6,7 +6,8 @@ export const globalstatSlice = createSlice({
     initialState:{
         globaldata : globalstats,
         coins : coins,
-        news: news
+        news: news,
+        imgdata: [],
     },
     reducers:{
         loadstats:(state, action)=>{
@@ -14,7 +15,7 @@ export const globalstatSlice = createSlice({
             // console.log(action.payload);
         },
         loadcoins:(state, action)=>{
-            state.coins = action.payload.slice(0, 10);
+            state.coins = action.payload;
             // console.log(action.payload.slice(0, 10));
         },
         loadnews:(state, action)=>{
@@ -29,17 +30,19 @@ export const globalstatSlice = createSlice({
                 console.log(obj);
 
             }
-
-
-
-            // console.log(action.payload.slice(0, 10));
-            
+        },
+        loadimg:(state, action)=>{
+            state.imgdata = [];
+            for (const key in action.payload) {
+                state.imgdata.push(action.payload[key].src.medium);
+            }
         }
     }
 })
 
-export const { loadstats, loadcoins, loadnews } = globalstatSlice.actions;
+export const { loadstats, loadcoins, loadnews, loadimg } = globalstatSlice.actions;
 export const globaldata = (state) => state.globalstatReducers.globaldata;
 export const coinsdata = (state) => state.globalstatReducers.coins;
 export const newsdata = (state) => state.globalstatReducers.news;
+export const imgdata = (state) => state.globalstatReducers.imgdata;
 export default globalstatSlice.reducer;

@@ -4,6 +4,7 @@ import { useState } from "react";
 import Tooltip, { tooltipClasses } from '@mui/material/Tooltip';
 import { styled } from '@mui/material/styles';
 import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
+import { Skeleton } from 'antd';
 
 const LightTooltip = styled(({ className, ...props }) => (
   <Tooltip {...props} classes={{ popper: className }} />
@@ -51,7 +52,7 @@ const Exchanges = (props) => {
           </thead>
           <tbody>
             {
-              exchanges.map((i,index)=>{
+             exchanges[0] ? exchanges.map((i,index)=>{
                 return(
                   <tr>
                     <th scope="row" className="px-3 text-center">{i.trust_score_rank}</th>
@@ -65,10 +66,13 @@ const Exchanges = (props) => {
                     <td className="text-center"><a href={i.url} target="_blank"  rel="noreferrer" className="text-center text-primary hover">See</a></td>
                   </tr>
                 )
-              })
+              }) : <p className="m-auto"></p> 
             }
           </tbody>
         </table>
+        {
+          exchanges[0] ? '' : <Skeleton active  className="w-100"/>
+        }
     </div>
   )
 };
