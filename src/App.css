@@ -380,6 +380,7 @@ a.active {
 }
 .price-change{
   font-weight: 900 !important;
+  display: inline-block;
 }
 .current-price{
   margin-top: 0px !important;

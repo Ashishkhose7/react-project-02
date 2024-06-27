@@ -4,9 +4,9 @@ import { globalstats, coins, news } from "../Services/rawdata";
 export const globalstatSlice = createSlice({
     name: 'globalstats',
     initialState:{
-        globaldata : globalstats,
-        coins : coins,
-        news: news,
+        globaldata : '',
+        coins : '',
+        news: '',
         imgdata: [],
     },
     reducers:{

@@ -11,34 +11,33 @@ const { Title } = Typography;
 
 const Dashboard = () => {
   const stats = useSelector(globaldata);
-  const topcoins = useSelector(coinsdata);
+  const topcoins = useSelector(coinsdata).slice(0,10);
   const topnews = useSelector(newsdata);
   const imgurls = useSelector(imgdata);
-  const [img, setImg] = useState([]);
   const dispatch = useDispatch();
 
   useEffect(() => {
       const fetchStats = async()=>{
-        // const statsurl = 'https://coinranking1.p.rapidapi.com/stats?referenceCurrencyUuid=yhjMzLPhuIDl';
-        // const coinsurl = 'https://coinranking1.p.rapidapi.com/coins?referenceCurrencyUuid=yhjMzLPhuIDl&timePeriod=24h&tiers=1&orderBy=marketCap&orderDirection=desc&limit=50&offset=0';
-        // const newsurl = 'https://crypto-news16.p.rapidapi.com/news/all';
+        const statsurl = 'https://coinranking1.p.rapidapi.com/stats?referenceCurrencyUuid=yhjMzLPhuIDl';
+        const coinsurl = 'https://coinranking1.p.rapidapi.com/coins?referenceCurrencyUuid=yhjMzLPhuIDl&timePeriod=24h&tiers=1&orderBy=marketCap&orderDirection=desc&limit=50&offset=0';
+        const newsurl = 'https://crypto-news16.p.rapidapi.com/news/all';
         const imgurl = 'https://api.pexels.com/v1/search?per_page=200&query=Cryptocurrency';
        
-        //   const options1 = {
-        //     method: 'GET',
-        //     headers: {
-        //       'x-rapidapi-key': '53cafe9a16msh9e42f46b009f80ap11be03jsnec1d5f1aa24b',
-        //       'x-rapidapi-host': 'coinranking1.p.rapidapi.com'
-        //     }
-        //   };
+          const options1 = {
+            method: 'GET',
+            headers: {
+              'x-rapidapi-key': '53cafe9a16msh9e42f46b009f80ap11be03jsnec1d5f1aa24b',
+              'x-rapidapi-host': 'coinranking1.p.rapidapi.com'
+            }
+          };
 
-        // const newsoption = {
-        //   method: 'GET',
-        //   headers: {
-        //     'x-rapidapi-key': '53cafe9a16msh9e42f46b009f80ap11be03jsnec1d5f1aa24b',
-        //     'x-rapidapi-host': 'crypto-news16.p.rapidapi.com'
-        //   }
-        // };
+        const newsoption = {
+          method: 'GET',
+          headers: {
+            'x-rapidapi-key': '53cafe9a16msh9e42f46b009f80ap11be03jsnec1d5f1aa24b',
+            'x-rapidapi-host': 'crypto-news16.p.rapidapi.com'
+          }
+        };
        
         const imgoption = {
               method: 'GET',
@@ -49,22 +48,21 @@ const Dashboard = () => {
 
           try {
 
-        //     const response1 = await fetch(statsurl, options1);
-        //     const globalstats = await response1.json();
+            const response1 = await fetch(statsurl, options1);
+            const globalstats = await response1.json();
             
-        //     const response2 = await fetch(coinsurl, options1);
-        //     const coinstats = await response2.json();
+            const response2 = await fetch(coinsurl, options1);
+            const coinstats = await response2.json();
 
-            // const response3 = await fetch(newsurl, newsoption);
-            // const news = await response3.json();
+            const response3 = await fetch(newsurl, newsoption);
+            const news = await response3.json();
             
             const response4 = await fetch(imgurl, imgoption);
             const img = await response4.json();
             
-            // setImg(img.photos);
-            // dispatch(loadstats(globalstats.data));
-            // dispatch(loadcoins(coinstats.data.coins));
-            // dispatch(loadnews(news));
+            dispatch(loadstats(globalstats.data));
+            dispatch(loadcoins(coinstats.data.coins));
+            dispatch(loadnews(news));
             dispatch(loadimg(img.photos));
             
           } catch (error) {
@@ -164,7 +162,7 @@ const Dashboard = () => {
                                 xs={24} sm={12} lg={8}
                                   className="crypto-card"
                                   key={randomNumber+1}>
-                                    <Cardcomponent key={randomNumber-1} news={news} source={newsd.source} randomNumber={randomNumber} imgurl={imgurls.length>20 ? imgurls[randomNumber] : 'https://images.pexels.com/photos/5980887/pexels-photo-5980887.jpeg'} getnews/> 
+                                    <Cardcomponent key={randomNumber-1} news={news} source={newsd.source} randomNumber={randomNumber} imgurl={imgurls.length>20 ? imgurls[randomNumber] : 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTw_HeSzHfBorKS4muw4IIeVvvRgnhyO8Gn8w&s'} getnews/> 
                               </Col>
                               )
                             }

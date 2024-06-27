@@ -5,19 +5,21 @@ import { Col, Row, Typography, Select } from 'antd';
 import { Skeleton } from 'antd';
 import { MoneyCollectOutlined, DollarCircleOutlined, FundOutlined, ExclamationCircleOutlined, StopOutlined, TrophyOutlined, CheckOutlined, NumberOutlined, ThunderboltOutlined } from '@ant-design/icons';
 import Chart from '../Components/Pricechart';
+import { Spin } from 'antd';
+
 const { Title, Text } = Typography;
 const { Option } = Select;
-
 
 const Cryptodetails = (props) => {
   const { coinId } = useParams();
   const [timePeriod, setTimeperiod] = useState('7d');
   const [coindata, setCoindata] = useState({});
   const [chartdata, setChartdata] = useState({});
+  const [loading, setLoading] = useState(false);
   const time = ['3h', '24h', '7d', '30d', '1y', '3m', '3y', '5y'];
 
   useEffect(() => {
-   
+    setLoading(true)
     const coinurl = `https://coinranking1.p.rapidapi.com/coin/${coinId}?referenceCurrencyUuid=yhjMzLPhuIDl&timePeriod=${timePeriod}`;
     const charturl = `https://coinranking1.p.rapidapi.com/coin/${coinId}/history?referenceCurrencyUuid=yhjMzLPhuIDl&timePeriod=${timePeriod}`;
 
@@ -37,6 +39,7 @@ const Cryptodetails = (props) => {
         const data2 = await response2.json();
         setCoindata(data);
         setChartdata(data2);
+        setLoading(false);
       } catch (error) {
         console.log(error);
       }
@@ -85,10 +88,11 @@ const Cryptodetails = (props) => {
         </Select>
       </div>
       <div className="col-md-12 linechart">
-        
-        <Chart coinHistory={chartdata.data.history} currentPrice={millify(coindata.data.coin.price)} coinName={coindata.data.coin.name} priceChange={coindata.data.coin.change}/>
+        <Spin spinning={loading}>
+          <Chart coinHistory={chartdata.data.history} currentPrice={millify(coindata.data.coin.price)} coinName={coindata.data.coin.name} priceChange={coindata.data.coin.change}/>
+        </Spin>
       </div>
-      <Col className="stats-container">
+      <Col className="stats-container mt-5">
         <Col className="coin-value-statistics">
           <Col className="coin-value-statistics-heading">
             <Title level={4} className="coin-details-heading">{coindata.data.coin.name} Value Statistics</Title>
