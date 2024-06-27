@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import React, { useEffect } from "react"
 import { Typography, Row, Col, Statistic } from 'antd';
 import millify from 'millify';
 import {useDispatch, useSelector} from 'react-redux';

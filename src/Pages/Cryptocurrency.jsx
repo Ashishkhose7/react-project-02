@@ -5,7 +5,7 @@ import { useSelector } from "react-redux";
 import { Row, Col, Skeleton } from 'antd';
 import { Link } from "react-router-dom";
 
-const Cryptocurrency = (props) => {
+const Cryptocurrency = () => {
   const coins = useSelector(coinsdata);
 
   return (

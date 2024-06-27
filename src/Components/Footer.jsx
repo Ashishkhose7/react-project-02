@@ -1,6 +1,6 @@
 import React from "react"
 
-const Footer = (props) => {
+const Footer = () => {
   return (
     <div className="row m-0 p-0 footerdiv">
         <div className="col-md-12 m-0 p-0">

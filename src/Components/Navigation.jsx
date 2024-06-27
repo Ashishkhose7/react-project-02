@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react"
-import { Link, NavLink, useLocation, useNavigate } from "react-router-dom";
+import { NavLink, useLocation, useNavigate } from "react-router-dom";
 
-const Navigation = (props) => {
+const Navigation = () => {
   const [tab, setTab] = useState("");
   const navigate = useNavigate();
   const location = useLocation();

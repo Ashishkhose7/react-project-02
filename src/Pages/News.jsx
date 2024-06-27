@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from "react"
-import Card from '@mui/material/Card';
 import { CardActionArea } from '@mui/material';
 import { Skeleton } from 'antd';
 import { imgdata, loadimg } from "../Reducers/globalstatReducers";
 import { useDispatch, useSelector } from "react-redux";
 
-const News = (props) => {
+const News = () => {
 
     const [userText, setUserText] = useState('');
     const [news, setNews] = useState([]);
@@ -51,7 +50,6 @@ const News = (props) => {
             const data2 = result.slice(breakpoint);
             setNews(data1);
             setTopn(data2);
-            console.log("fetched")
             setIsLoading(false);
             dispatch(loadimg(img.photos));
 

@@ -10,7 +10,7 @@ import { Spin } from 'antd';
 const { Title, Text } = Typography;
 const { Option } = Select;
 
-const Cryptodetails = (props) => {
+const Cryptodetails = () => {
   const { coinId } = useParams();
   const [timePeriod, setTimeperiod] = useState('7d');
   const [coindata, setCoindata] = useState({});
@@ -50,8 +50,6 @@ const Cryptodetails = (props) => {
 
   
   if(coindata.status === 'success' && chartdata.status === 'success') {
-    // console.log(coindata, "coindata")
-    // console.log(chartdata, "chartdata")
 
     const stats = [
       { title: 'Price to USD', value: `$ ${coindata.data.coin.price && millify(coindata.data.coin.price)}`, icon: <DollarCircleOutlined /> },

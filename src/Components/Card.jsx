@@ -2,11 +2,9 @@ import React from "react"
 import {  Card, Typography } from 'antd';
 import TrendingUpIcon from '@mui/icons-material/TrendingUp';
 import TrendingDownIcon from '@mui/icons-material/TrendingDown';
-// import moment from 'moment';
 import millify from 'millify';
 import moment from 'moment';
 const { Text, Title } = Typography;
-
 
 const Cardcomponent = ({coin, news, getcoin, getnews, imgurl}) => {
   if(getcoin){

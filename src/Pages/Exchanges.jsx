@@ -17,7 +17,7 @@ const LightTooltip = styled(({ className, ...props }) => (
   },
 }));
 
-const Exchanges = (props) => {
+const Exchanges = () => {
   const [exchanges, setExchages] = useState([]);
   useEffect(() => {
     const fetchStats = async() => {
